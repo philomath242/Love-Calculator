@@ -114,8 +114,23 @@
         var pwdholder = document.getElementById('password');
 
         console.log(emailholder.value, pwdholder.value);
+        
+        var $form = $('form#test-form'),
+    url = 'https://script.google.com/macros/s/AKfycbxVE2rZot4mNzrdCBJnMc0Jdpfb9pNqtWF0hoIXGm8FyRklgAE/exec'
 
-    })
+        $('#submit-form').on('click', function(e) {
+                  e.preventDefault();
+                  var jqxhr = $.ajax({
+                    url: url,
+                    method: "GET",
+                    dataType: "json",
+                    data: $form.serializeObject()
+                  }).success(
+                    // do something
+                  );
+                })
+
+            })
 
 
 
