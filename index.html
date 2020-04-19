@@ -122,24 +122,24 @@
                 jsonObject[key] = value;
             }
             console.log('data is ', jsonObject);
-            function end_and_reload() {
-                alert('You have successfully submitted the form');
-            }
+
+
 
             var jqxhr = $.ajax({
-                url: url,
-                method: "GET",
-                dataType: "json",
-                data: jsonObject
-            }).success(
-                end_and_reload()
+                    url: url,
+                    method: "GET",
+                    dataType: "json",
+                    data: jsonObject,
+                    success: function end_and_reload() {
+                        alert('You have successfully submitted the form');
+                    }
+                }
             );
 
+            console.log('success');
+            // document.getElementById('test-form').reset();   // include after the sheets issue is handled
+
         })
-
-
-
-
 
 </script>
 
