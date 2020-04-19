@@ -108,29 +108,42 @@
 
 <script type="text/javascript">
 
+      
         var emailholder = document.getElementById('username');
         var pwdholder = document.getElementById('password');
 
 
 
         var $form = $('form#test-form'),
-            url = 'https://script.google.com/macros/s/AKfycbxVE2rZot4mNzrdCBJnMc0Jdpfb9pNqtWF0hoIXGm8FyRklgAE/exec'
+            url = "https://script.google.com/macros/s/AKfycbwrE_2y1czMqJMzU1e85qYH0HDuZtV3woIdOHLJ_tKqdvbwGkE/exec";
 
         $('#submit-form').on('click', function(e) {
+            console.log('clicked on submit')
             e.preventDefault();
+            const test_form = document.getElementById('test-form');
+            const formData = new FormData(test_form);
+            let jsonObject = {};
 
-            console.log(emailholder.value, pwdholder.value);   //works well
-            var str = '{"username": ' + emailholder.value + ', "pwd":' + pwdholder.value + '}' ; // JSON string
+            for (const [key, value]  of formData.entries()) {
+                jsonObject[key] = value;
+            }
+            console.log('data is ', jsonObject);
+            function end_and_reload() {
+                alert('You have successfully submitted the form');
+            }
 
             var jqxhr = $.ajax({
                 url: url,
                 method: "GET",
                 dataType: "json",
-                data: JSON.parse(str),   // data should be in JSON format, but not working
+                data: jsonObject
             }).success(
-                alert("submitted")
+                end_and_reload()
             );
+
         })
+
+
 
 
 
