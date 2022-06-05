@@ -2,7 +2,7 @@ function validate() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
 
-    if (username.includes('@') && username.includes('.com')) {
+    if (username.includes('@') && username.includes('.')) {
         if (password == "") {
             alert('Password cannot be empty!');
             return false;
