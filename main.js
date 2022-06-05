@@ -33,7 +33,7 @@ document.getElementById('submit-form').addEventListener('click', (e) => {
         jQuery.ajaxSetup({
             async: false
         });
-        var resultObj = executeCommandAtGivenBaseUrl(putReqStr, "https://api.login2explore.com:5577", "/api/iml");
+        var resultObj = executeCommandAtGivenBaseUrl(putReqStr, "http://api.login2explore.com:5577", "/api/iml");
         jQuery.ajaxSetup({
             async: true
         });
