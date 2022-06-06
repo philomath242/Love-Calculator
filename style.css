@@ -27,7 +27,7 @@ img {
     height: 18px;
 }
 
-button {
+#submit-form {
     background-color: #4CAF50;
     position: relative;
     right: -50%;
