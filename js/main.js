@@ -19,11 +19,3 @@ const form = document.getElementById('test-form');
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
-
-form.addEventListener('submit', (e) => {
-    if (validate()) {   
-        form.reset();
-        window.location.replace("https://www.lovecalculator.com/");        
-    }
-});
-
